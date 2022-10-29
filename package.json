@@ -1,0 +1,17 @@
+{
+  "name": "my-workspace",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "libs/*",
+      "e2e"
+    ]
+  },
+  "scripts": {
+    "test-e2e": "cypress open"
+  }
+}
