@@ -12,5 +12,6 @@
   },
   "scripts": {
     "test-e2e": "cypress open"
-  }
+  },
+  "packageManager": "yarn@3.3.1"
 }
