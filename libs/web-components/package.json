@@ -9,11 +9,11 @@
     "test": "cypress open"
   },
   "dependencies": {
-    "lit": "^2.5.0"
+    "lit": "^2.6.1"
   },
   "devDependencies": {
-    "lit-html": "^2.5.0",
-    "typescript": "^4.9.4",
+    "lit-html": "^2.6.1",
+    "typescript": "^4.9.5",
     "vite": "^3.2.5"
   }
 }
