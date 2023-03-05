@@ -21,6 +21,6 @@
       "~/*": ["./src/*"]
     }
   },
-  "files": ["./.eslintrc.cjs", "vite.config.ts"],
+  "files": ["./.eslintrc.cjs"],
   "include": ["src"]
 }

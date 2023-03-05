@@ -14,7 +14,7 @@ export const RouterHead = component$(() => {
 
             <link
                 rel="canonical"
-                href={loc.href}
+                href={loc.url.href}
             />
             <meta
                 name="viewport"
