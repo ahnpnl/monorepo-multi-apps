@@ -3,6 +3,7 @@ import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from '@builder.
 import { RouterHead } from './components/router-head/router-head';
 
 import './global.css';
+import { QwikSpeakAdapter } from '~/Infrastructure/Translations/QwikSpeak/TranslationProvider';
 
 export default component$(() => {
     /**
@@ -13,19 +14,21 @@ export default component$(() => {
      */
 
     return (
-        <QwikCityProvider>
-            <head>
-                <meta charSet="utf-8" />
-                <link
-                    rel="manifest"
-                    href="/manifest.json"
-                />
-                <RouterHead />
-            </head>
-            <body lang="en">
-                <RouterOutlet />
-                <ServiceWorkerRegister />
-            </body>
-        </QwikCityProvider>
+        <QwikSpeakAdapter>
+            <QwikCityProvider>
+                <head>
+                    <meta charSet="utf-8" />
+                    <link
+                        rel="manifest"
+                        href="/manifest.json"
+                    />
+                    <RouterHead />
+                </head>
+                <body lang="en">
+                    <RouterOutlet />
+                    <ServiceWorkerRegister />
+                </body>
+            </QwikCityProvider>
+        </QwikSpeakAdapter>
     );
 });
