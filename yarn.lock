@@ -374,9 +374,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@builder.io/qwik-city@npm:0.5.2":
-  version: 0.5.2
-  resolution: "@builder.io/qwik-city@npm:0.5.2"
+"@builder.io/qwik-city@npm:~0.5.3":
+  version: 0.5.3
+  resolution: "@builder.io/qwik-city@npm:0.5.3"
   dependencies:
     "@mdx-js/mdx": 2.3.0
     "@types/mdx": 2.0.3
@@ -385,18 +385,18 @@ __metadata:
     zod: ^3.20.6
   peerDependencies:
     "@builder.io/qwik": ">=0.20.0"
-  checksum: ee513e0adc7cbbff09a87c0c76b18aed5d0c8d07f274cca70c01833a94615f55fac0b77c72e252d3925054b77686233349b95daa2bd60f3fb0970d2a2e202bea
+  checksum: acac558b6881b7c66d22cc8e43a484e4729b2662503e69d35c31a4c64b6c18f47c080e74347e4ff3c411bd4c94a8b36723fcebee225e006c1e52ef93bc305509
   languageName: node
   linkType: hard
 
-"@builder.io/qwik@npm:0.20.1":
-  version: 0.20.1
-  resolution: "@builder.io/qwik@npm:0.20.1"
+"@builder.io/qwik@npm:~0.21.0":
+  version: 0.21.0
+  resolution: "@builder.io/qwik@npm:0.21.0"
   peerDependencies:
     undici: ^5.14.0
   bin:
     qwik: qwik.cjs
-  checksum: f0d6a2616c7b8bd170f3f9ae671f879ebb4fe95ac2fdcd2bea51e323aa7884558efd2da758a1ccf415d3365363ccc83baef9c0c9489734590b7f5217e54ff182
+  checksum: 8e4ee0f55fd7c3e627cff9f797eb558ed97be48c4f239430597c14547365ae9ad3b728a0883ad3396110a0177909d504eafeede1028c4fcf51e16da178ac3376
   languageName: node
   linkType: hard
 
@@ -1131,13 +1131,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:8.21.1":
-  version: 8.21.1
-  resolution: "@types/eslint@npm:8.21.1"
+"@types/eslint@npm:^8.21.2":
+  version: 8.21.2
+  resolution: "@types/eslint@npm:8.21.2"
   dependencies:
     "@types/estree": "*"
     "@types/json-schema": "*"
-  checksum: 584068441e4000c7b41c8928274fdcc737bc62f564928c30eb64ec41bbdbac31612f9fedaf490bceab31ec8305e99615166428188ea345d58878394683086fae
+  checksum: a48864c837137ee5b3f4f934a5468dc00456c998a2479f8f7ba1c2c34e1fc08414d9f49157f90814a9e843b1dd2cd824b4660cba9425e23d109250ec7ae0a259
   languageName: node
   linkType: hard
 
@@ -3096,12 +3096,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-qwik@npm:0.20.1":
-  version: 0.20.1
-  resolution: "eslint-plugin-qwik@npm:0.20.1"
+"eslint-plugin-qwik@npm:~0.21.0":
+  version: 0.21.0
+  resolution: "eslint-plugin-qwik@npm:0.21.0"
   peerDependencies:
     eslint: ">= 8"
-  checksum: 2708c2fae342d0599da74c3176b71aa54d7efb79618ac485fdb1f405828b89dffd703358c91d5cd612e3d17ad07b10dbf036a982b10ec96397bf8fc9ff62525e
+  checksum: c810ceda6dd67ae0fd3fc21e5d7cf988e908995cdefb914557268ca86183bdea2e10742d0514dc87be5ad36c8200e3ff14c21f2e4a949aa61ef8284e8b4b40e5
   languageName: node
   linkType: hard
 
@@ -4183,6 +4183,14 @@ __metadata:
   checksum: 1eb2fe63a729f7bdd8a559ab552c69055f4f48eb5c2f03724430587c6f450783c8f1cd936c1c952d0a927925180fcc892ebd5b174236cf1065d4bd5bdb37e963
   languageName: node
   linkType: hard
+
+"js-extension@workspace:libs/js-extension":
+  version: 0.0.0-use.local
+  resolution: "js-extension@workspace:libs/js-extension"
+  dependencies:
+    typescript: ^4.9.5
+  languageName: unknown
+  linkType: soft
 
 "js-sdsl@npm:^4.1.4":
   version: 4.2.0
@@ -5679,9 +5687,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "qwik-app@workspace:apps/QwikApp"
   dependencies:
-    "@builder.io/qwik": 0.20.1
-    "@builder.io/qwik-city": 0.5.2
-    "@types/eslint": 8.21.1
+    "@builder.io/qwik": ~0.21.0
+    "@builder.io/qwik-city": ~0.5.3
+    "@types/eslint": ^8.21.2
     "@types/node": ^18.14.0
     "@types/node-fetch": latest
     "@typescript-eslint/eslint-plugin": 5.54.0
@@ -5689,12 +5697,12 @@ __metadata:
     eslint: 8.35.0
     eslint-config-prettier: ^8.6.0
     eslint-plugin-prettier: ^4.2.1
-    eslint-plugin-qwik: 0.20.1
+    eslint-plugin-qwik: ~0.21.0
     node-fetch: 3.3.0
     prettier: 2.8.4
     qwik-speak: ^0.6.2
     typescript: 4.9.5
-    undici: 5.20.0
+    undici: ^5.21.0
     vite: 4.1.4
     vite-tsconfig-paths: 3.5.0
   languageName: unknown
@@ -6552,12 +6560,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:5.20.0":
-  version: 5.20.0
-  resolution: "undici@npm:5.20.0"
+"undici@npm:^5.21.0":
+  version: 5.21.0
+  resolution: "undici@npm:5.21.0"
   dependencies:
     busboy: ^1.6.0
-  checksum: 25412a785b2bd0b12f0bb0ec47ef00aa7a611ca0e570cb7af97cffe6a42e0d78e4b15190363a43771e9002defc3c6647c1b2d52201b3f64e2196819db4d150d3
+  checksum: 013d5fd503b631d607942c511c2ab3f3fa78ebcab302acab998b43176b4815503ec15ed9752c5a47918b3bff8a0137768001d3eb57625b2bb6f6d30d8a794d6c
   languageName: node
   linkType: hard
 

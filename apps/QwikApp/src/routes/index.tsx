@@ -1,14 +1,9 @@
 import { component$ } from '@builder.io/qwik';
-import type { DocumentHead } from '@builder.io/qwik-city';
-import { Link } from '@builder.io/qwik-city';
-import {
-    useSetLocale,
-    useTranslate,
-    useTranslationState,
-} from '~/Infrastructure/Translations/QwikSpeak/translationService';
+import { Link, type DocumentHead } from '@builder.io/qwik-city';
+import { useSetLocale, useTranslate, useTranslationState } from '~/Infrastructure/Translations/QwikSpeak';
 
 export default component$(() => {
-    const translationCtx = useTranslationState();
+    const translationState = useTranslationState();
     const setLocale = useSetLocale();
     const translate = useTranslate();
 
@@ -19,8 +14,8 @@ export default component$(() => {
             </h1>
             <h1>Simple {translate('test')}</h1>
             <h1>Pluralization {translate({ key: 'car', count: 2 })}</h1>
-            <h3>Current locale {translationCtx.locale.value}</h3>
-            <h3>Supported locales {JSON.stringify(translationCtx.supportedLocales.value)}</h3>
+            <h3>Current locale {translationState.locale.value}</h3>
+            <h3>Supported locales {JSON.stringify(translationState.supportedLocales.value)}</h3>
 
             <button onClick$={() => setLocale('en-US')}>English</button>
             <button onclick$={() => setLocale('nl-NL')}>Nederlands</button>

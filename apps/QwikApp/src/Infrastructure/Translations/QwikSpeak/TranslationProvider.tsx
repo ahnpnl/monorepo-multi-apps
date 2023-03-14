@@ -1,79 +1,58 @@
-import { $, component$, createContextId, type QRL, Slot, useContextProvider, useSignal } from '@builder.io/qwik';
-import { changeLocale, type LoadTranslationFn, QwikSpeakProvider, useSpeakContext } from 'qwik-speak';
-import { isServer } from '@builder.io/qwik/build';
+import {
+    $,
+    component$,
+    createContextId,
+    type QRL,
+    Slot,
+    useComputed$,
+    useContext,
+    useContextProvider,
+    useSignal,
+} from '@builder.io/qwik';
+import { fromLocaleToLang } from 'js-extension/src/I18n/localeHelpers';
+import { $plural, $translate, changeLocale, useSpeakContext } from 'qwik-speak';
 
 import type {
-    IETFLocaleType,
-    LanguageType,
-    SetLocaleHookType,
-    TranslationMessagesType,
-} from '../../../../../../libs/framework-extension/src/Translations/Core/Port/translationServiceInterface';
-import { APP_DEFAULT_LOCALE } from '../../../../config/locales';
-import type { QwiKTranslationStateType } from '~/Infrastructure/Translations/QwikSpeak/types';
+    SetLocaleFnType,
+    TranslateFnType,
+} from 'framework-extension/src/Translations/translationServiceInterface';
+import type { IETFLocaleType } from 'js-extension/src/I18n/types';
+import type { QwikSpeakTranslationStateType } from '~/Infrastructure/Translations/QwikSpeak/types';
 
-export const QwikTranslationStateContext = createContextId<QwiKTranslationStateType>('QwikTranslationStateContext');
+const TranslationStateContextId = createContextId<QwikSpeakTranslationStateType>('TranslationStateContext');
 
-export const QwikSetLocaleContext = createContextId<QRL<SetLocaleHookType>>('QwikSetLocaleContext');
+const SetLocaleContextId = createContextId<QRL<SetLocaleFnType>>('SetLocaleContext');
 
-const loadTranslation$: LoadTranslationFn = $(async (lang: LanguageType, asset: string, origin?: string) => {
-    let url = '';
-    let data: TranslationMessagesType | null = null;
-    // Absolute urls on server
-    if (isServer && origin) {
-        url = origin;
-    }
-    url += `/assets/i18n/${lang}/${asset}.json`;
+export const useTranslationState = () => useContext(TranslationStateContextId);
 
-    try {
-        const response = await fetch(url);
-        data = response.ok ? await response.json() : null;
-    } catch (error) {
-        console.log('loadTranslation$ error: ', error);
-    }
+export const useSetLocale = () => useContext(SetLocaleContextId);
 
-    if (!data) {
-        console.warn(`loadTranslation$: ${url} not found`);
-    }
+export const useTranslate = (): TranslateFnType => {
+    return (translationInput) => {
+        if (typeof translationInput === 'string') return $translate(translationInput);
 
-    return data;
-});
+        const namedValue = translationInput.namedValue ?? Object.create(null);
+        if (typeof translationInput.count !== 'undefined') return $plural(translationInput.count, translationInput.key);
 
-const TranslationProvider = component$(() => {
+        return $translate(translationInput.key, namedValue);
+    };
+};
+
+export const TranslationProvider = component$(() => {
     const speakContext = useSpeakContext();
-    const currentLocale = useSignal<IETFLocaleType>(APP_DEFAULT_LOCALE);
-    const supportedLocales = useSignal<IETFLocaleType[]>([APP_DEFAULT_LOCALE]);
-    useContextProvider(QwikTranslationStateContext, {
-        locale: currentLocale,
-        supportedLocales,
+    const currentLocale = useComputed$(() => speakContext.locale.lang);
+    const supportedLocales = useSignal<IETFLocaleType[]>([]);
+    useContextProvider(TranslationStateContextId, {
+        locale: useComputed$(() => currentLocale.value),
+        language: useComputed$(() => fromLocaleToLang(currentLocale.value)),
+        supportedLocales: useComputed$(() => supportedLocales.value),
     });
     useContextProvider(
-        QwikSetLocaleContext,
+        SetLocaleContextId,
         $((requestedLocale) => {
-            currentLocale.value = requestedLocale;
-            supportedLocales.value = Array.from(new Set([...supportedLocales.value, requestedLocale]));
-
             return changeLocale({ lang: requestedLocale }, speakContext);
         }),
     );
 
     return <Slot />;
-});
-
-export const QwikSpeakAdapter = component$(() => {
-    return (
-        <QwikSpeakProvider
-            config={{
-                defaultLocale: { lang: APP_DEFAULT_LOCALE },
-                supportedLocales: [{ lang: APP_DEFAULT_LOCALE }],
-                assets: ['common'],
-            }}
-            translationFn={{
-                loadTranslation$,
-            }}
-        >
-            <TranslationProvider>
-                <Slot />
-            </TranslationProvider>
-        </QwikSpeakProvider>
-    );
 });
