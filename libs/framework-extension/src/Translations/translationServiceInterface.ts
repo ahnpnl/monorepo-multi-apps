@@ -11,12 +11,10 @@ export type TranslationInputType =
 
 export interface TranslationStateInterface<
     TLocale = IETFLocaleType,
-    TSupportedLocales = IETFLocaleType[],
     TLanguage = LanguageType,
 > {
     locale: TLocale;
     language: TLanguage;
-    supportedLocales: TSupportedLocales;
 }
 
 export type TranslateFnType = (translationInput: TranslationInputType) => string;

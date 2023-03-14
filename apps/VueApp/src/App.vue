@@ -3,7 +3,6 @@
     <h1 v-text="'Pluralization ' + translate({ key: 'car', count: 2 })" />
 
     <h3>Current locale {{ translationState.locale }}</h3>
-    <h3>Supported locales {{ translationState.supportedLocales }}</h3>
 
     <button @click="setLocale('en-US')" v-text="'English'"></button>
     <button @click="setLocale('nl-NL')" v-text="'Nederlands'"></button>

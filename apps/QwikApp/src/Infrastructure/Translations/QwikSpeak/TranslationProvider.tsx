@@ -7,7 +7,6 @@ import {
     useComputed$,
     useContext,
     useContextProvider,
-    useSignal,
 } from '@builder.io/qwik';
 import { fromLocaleToLang } from 'js-extension/src/I18n/localeHelpers';
 import { $plural, $translate, changeLocale, useSpeakContext } from 'qwik-speak';
@@ -16,7 +15,6 @@ import type {
     SetLocaleFnType,
     TranslateFnType,
 } from 'framework-extension/src/Translations/translationServiceInterface';
-import type { IETFLocaleType } from 'js-extension/src/I18n/types';
 import type { QwikSpeakTranslationStateType } from '~/Infrastructure/Translations/QwikSpeak/types';
 
 const TranslationStateContextId = createContextId<QwikSpeakTranslationStateType>('TranslationStateContext');
@@ -41,11 +39,9 @@ export const useTranslate = (): TranslateFnType => {
 export const TranslationProvider = component$(() => {
     const speakContext = useSpeakContext();
     const currentLocale = useComputed$(() => speakContext.locale.lang);
-    const supportedLocales = useSignal<IETFLocaleType[]>([]);
     useContextProvider(TranslationStateContextId, {
         locale: useComputed$(() => currentLocale.value),
         language: useComputed$(() => fromLocaleToLang(currentLocale.value)),
-        supportedLocales: useComputed$(() => supportedLocales.value),
     });
     useContextProvider(
         SetLocaleContextId,

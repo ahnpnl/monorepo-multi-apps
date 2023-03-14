@@ -37,7 +37,7 @@ const translateHookImpl = (i18nCtx: I18n<{}, {}, {}, string, false>, translation
     return t(translationInput.key, namedValue);
 }
 
-const setNewLocaleMessages = async (i18nCtx: I18n<{}, {}, {}, string, false>, newLocale: IETFLocaleType): Promise<void> => {
+const setNewLocale = async (i18nCtx: I18n<{}, {}, {}, string, false>, newLocale: IETFLocaleType): Promise<void> => {
     const localeMessages = i18nCtx.global.getLocaleMessage(newLocale);
     if (!Object.keys(localeMessages).length) {
         try {
@@ -65,12 +65,11 @@ export const vueI18nAdapter: Plugin = {
         const currentLocale = computed(() => i18n.global.locale.value);
 
         app.use(i18n);
-        app.provide(VueSetLocaleContext, (requestedLocale) => setNewLocaleMessages(i18n, requestedLocale));
+        app.provide(VueSetLocaleContext, (requestedLocale) => setNewLocale(i18n, requestedLocale));
         app.provide(VueTranslateContext, (translationInput) => translateHookImpl(i18n, translationInput));
         app.provide(VueTranslationState, {
             locale: computed(() => currentLocale.value),
             language: computed(() => fromLocaleToLang(currentLocale.value)),
-            supportedLocales: computed(() => []),
         });
     }
 }

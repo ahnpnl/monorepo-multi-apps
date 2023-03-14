@@ -7,6 +7,5 @@ type ReactiveImmutableLanguageType = Readonly<Signal<LanguageType>>;
 
 export type QwikSpeakTranslationStateType = TranslationStateInterface<
     ReactiveImmutableLocaleType,
-    Readonly<Signal<IETFLocaleType[]>>,
     ReactiveImmutableLanguageType
 >;

@@ -15,7 +15,6 @@ export default component$(() => {
             <h1>Simple {translate('test')}</h1>
             <h1>Pluralization {translate({ key: 'car', count: 2 })}</h1>
             <h3>Current locale {translationState.locale.value}</h3>
-            <h3>Supported locales {JSON.stringify(translationState.supportedLocales.value)}</h3>
 
             <button onClick$={() => setLocale('en-US')}>English</button>
             <button onclick$={() => setLocale('nl-NL')}>Nederlands</button>
