@@ -1,10 +1,10 @@
 import { component$, createContextId, Slot, useContext, useContextProvider, useStore } from '@builder.io/qwik';
 import { LocaleHelper } from 'js-extension/src/I18n';
+import { $plural, $translate, useSpeakContext } from 'qwik-speak';
 import type {
     TranslateFnType,
-    TranslationStateInterface,
-} from 'js-framework-extension/src/I18n/Translation/Port/translationInterface';
-import { $plural, $translate, useSpeakContext } from 'qwik-speak';
+    TranslationStateInterface
+} from "js-framework-extension/src/Translations/translationServiceInterface";
 
 const TranslationStateContextId = createContextId<TranslationStateInterface>('TranslationStateContext');
 

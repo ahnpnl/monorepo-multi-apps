@@ -4134,14 +4134,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framework-extension@workspace:libs/framework-extension":
-  version: 0.0.0-use.local
-  resolution: "framework-extension@workspace:libs/framework-extension"
-  dependencies:
-    typescript: ~4.9.5
-  languageName: unknown
-  linkType: soft
-
 "fs-extra@npm:^9.1.0":
   version: 9.1.0
   resolution: "fs-extra@npm:9.1.0"
@@ -5020,6 +5012,14 @@ __metadata:
 "js-extension@workspace:libs/js-extension":
   version: 0.0.0-use.local
   resolution: "js-extension@workspace:libs/js-extension"
+  dependencies:
+    typescript: ~4.9.5
+  languageName: unknown
+  linkType: soft
+
+"js-framework-extension@workspace:libs/js-framework-extension":
+  version: 0.0.0-use.local
+  resolution: "js-framework-extension@workspace:libs/js-framework-extension"
   dependencies:
     typescript: ~4.9.5
   languageName: unknown

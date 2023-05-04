@@ -31,8 +31,8 @@ export default component$(() => {
         <>
             <h1>Form Action TODO list</h1>
             <ul>
-                {list.value.map((item) => (
-                    <li>{item.text}</li>
+                {list.value.map((item, idx) => (
+                    <li key={idx}>{item.text}</li>
                 ))}
             </ul>
             <Form
