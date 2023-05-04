@@ -6159,6 +6159,7 @@ __metadata:
     eslint: ^8.39.0
     eslint-plugin-qwik: ~1.0.0
     prettier: ^2.8.8
+    qwik-speak: ^0.12.0
     typescript: ~4.9.5
     undici: ^5.22.0
     vite: ^4.3.4
@@ -6705,6 +6706,17 @@ __metadata:
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
   checksum: b676f8c040cdc5b12723ad2f91414d267605b26419d5c821ff03befa817ddd10e238d22b25d604920340fd73efd8ba795465a0377c4adf45a4a41e4234e42dc4
+  languageName: node
+  linkType: hard
+
+"qwik-speak@npm:^0.12.0":
+  version: 0.12.0
+  resolution: "qwik-speak@npm:0.12.0"
+  peerDependencies:
+    "@builder.io/qwik": ">=1.0.0"
+  bin:
+    qwik-speak-extract: extract/cli.js
+  checksum: 6470612ede2cadef6c39eb4062e4cab923dd33f2d5c8466fb25ea24fe138618935c659cc976f31cfd758bc879eca990690ce602d4b0b2e3e0b99293824ef11c9
   languageName: node
   linkType: hard
 

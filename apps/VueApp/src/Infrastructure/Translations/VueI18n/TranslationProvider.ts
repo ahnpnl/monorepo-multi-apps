@@ -10,7 +10,7 @@ import type { VueTranslationStateType } from './types';
 import { APP_DEFAULT_LOCALE } from '../../../../config/locales';
 import enUSMessages from '../../../../assets/i18n/en-US.json';
 import type { IETFLocaleType } from 'js-extension/src/I18n/types';
-import { fromLocaleToLang } from 'js-extension/src/I18n/localeHelpers';
+import { LocaleHelper } from "js-extension/src/I18n";
 
 const VueTranslateContext = Symbol('VueTranslateContext') as InjectionKey<TranslateFnType>;
 const VueSetLocaleContext = Symbol('VueSetLocaleContext') as InjectionKey<SetLocaleFnType>;
@@ -69,7 +69,7 @@ export const vueI18nAdapter: Plugin = {
         app.provide(VueTranslateContext, (translationInput) => translateHookImpl(i18n, translationInput));
         app.provide(VueTranslationState, {
             locale: computed(() => currentLocale.value),
-            language: computed(() => fromLocaleToLang(currentLocale.value)),
+            language: computed(() => LocaleHelper.fromLocaleToLang(currentLocale.value)),
         });
     }
 }

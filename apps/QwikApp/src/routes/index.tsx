@@ -5,8 +5,11 @@ import Counter from '~/components/starter/counter/counter';
 import Hero from '~/components/starter/hero/hero';
 import Infobox from '~/components/starter/infobox/infobox';
 import Starter from '~/components/starter/next-steps/next-steps';
+import { useTranslate } from "~/Infrastructure/Translations/QwikSpeak";
 
 export default component$(() => {
+    const translate = useTranslate();
+
   return (
     <>
       <Hero />
@@ -26,7 +29,7 @@ export default component$(() => {
       <div class="container container-flex">
         <Infobox>
           <div q:slot="title" class="icon icon-cli">
-            CLI Commands
+              {translate('test')}
           </div>
           <>
             <p>
