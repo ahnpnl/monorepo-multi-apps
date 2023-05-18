@@ -16,7 +16,7 @@ export const PLATFORM_SUPPORTED_LANGUAGES = {
     PT: 'pt',
     RU: 'ru',
     ZH: 'zh',
-};
+} as const;
 
 export const LANG_TO_LOCALE = {
     [PLATFORM_SUPPORTED_LANGUAGES.AF]: PLATFORM_SUPPORTED_LOCALES.AF_ZA,

@@ -25,3 +25,4 @@ tmp
 *.sw?
 .yarn/cache
 .yarn/install-state.gz
+tsconfig.tsbuildinfo

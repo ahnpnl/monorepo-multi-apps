@@ -16,4 +16,4 @@ export const PLATFORM_SUPPORTED_LOCALES = {
     RU_RU: 'ru-RU',
     ZH_CN: 'zh-CN',
     PT_BR: 'pt-BR',
-};
+} as const;

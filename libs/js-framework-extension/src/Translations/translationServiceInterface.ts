@@ -18,5 +18,3 @@ export interface TranslationStateInterface<
 }
 
 export type TranslateFnType = (translationInput: TranslationInputType) => string;
-
-export type SetLocaleFnType = (requestedLocale: string) => Promise<void>;
