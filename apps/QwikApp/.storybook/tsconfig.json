@@ -11,13 +11,10 @@
     "../**/*.test.tsx"
   ],
   "include": [
-    "../stories/**/*.stories.ts",
-    "../stories/**/*.stories.js",
-    "../stories/**/*.stories.jsx",
-    "../stories/**/*.stories.tsx",
-    "../stories/**/*.stories.mdx",
+    "../src/**/*.stories.ts",
+    "../src/**/*.stories.tsx",
+    "../src/**/*.stories.mdx",
     "*.ts",
-    "*.js",
     "preview.tsx"
   ]
 }

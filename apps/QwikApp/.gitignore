@@ -6,6 +6,7 @@
 
 # Development
 node_modules
+storybook-static
 
 # Cache
 .cache
