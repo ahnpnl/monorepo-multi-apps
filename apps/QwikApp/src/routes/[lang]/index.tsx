@@ -1,7 +1,5 @@
-import { component$ } from '@builder.io/qwik';
+import type { RequestHandler } from '@builder.io/qwik-city';
 
-const LocalizedPage = component$(() => {
-    return <></>;
-});
-
-export default LocalizedPage;
+export const onRequest: RequestHandler = ({ redirect, params }) => {
+    throw redirect(302, `/en/${params.lang}/`);
+};
