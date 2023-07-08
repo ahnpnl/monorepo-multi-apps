@@ -1,0 +1,23 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "exclude": [
+    "../**/*.spec.ts",
+    "../**/*.test.ts",
+    "../**/*.spec.tsx",
+    "../**/*.test.tsx"
+  ],
+  "include": [
+    "../stories/**/*.stories.ts",
+    "../stories/**/*.stories.js",
+    "../stories/**/*.stories.jsx",
+    "../stories/**/*.stories.tsx",
+    "../stories/**/*.stories.mdx",
+    "*.ts",
+    "*.js",
+    "preview.tsx"
+  ]
+}
