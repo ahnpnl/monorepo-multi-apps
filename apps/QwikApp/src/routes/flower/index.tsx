@@ -1,5 +1,6 @@
 import { component$, useStore, useStylesScoped$, useVisibleTask$ } from '@builder.io/qwik';
 import { type DocumentHead, useLocation } from '@builder.io/qwik-city';
+
 import styles from './flower.css?inline';
 
 export default component$(() => {

@@ -4,7 +4,7 @@ import { QwikSpeakProvider, type SpeakConfig } from 'qwik-speak';
 
 import { TranslationProvider } from './TranslationProvider';
 import { translationFn } from './qwikTranslationFn';
-import { APP_DEFAULT_LOCALE, APP_SUPPORTED_LOCALES } from "../../../../config/locales";
+import { APP_DEFAULT_LOCALE, APP_SUPPORTED_LOCALES } from '../../../../config/locales';
 
 export const speakConfig: SpeakConfig = {
     defaultLocale: { lang: APP_DEFAULT_LOCALE },

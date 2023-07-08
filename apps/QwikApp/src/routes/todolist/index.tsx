@@ -1,11 +1,11 @@
 import { component$ } from '@builder.io/qwik';
 import { type DocumentHead, zod$, z, Form, routeLoader$, globalAction$ } from '@builder.io/qwik-city';
 
-interface ListItem {
+interface ListItemInterface {
     text: string;
 }
 
-export const list: ListItem[] = [];
+export const list: ListItemInterface[] = [];
 
 export const useListLoader = routeLoader$(() => {
     return list;
@@ -14,6 +14,7 @@ export const useListLoader = routeLoader$(() => {
 export const useAddToListAction = globalAction$(
     (item) => {
         list.push(item);
+
         return {
             success: true,
         };
@@ -24,14 +25,14 @@ export const useAddToListAction = globalAction$(
 );
 
 export default component$(() => {
-    const list = useListLoader();
+    const listLoader = useListLoader();
     const action = useAddToListAction();
 
     return (
         <>
             <h1>Form Action TODO list</h1>
             <ul>
-                {list.value.map((item, idx) => (
+                {listLoader.value.map((item, idx) => (
                     <li key={idx}>{item.text}</li>
                 ))}
             </ul>
