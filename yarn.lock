@@ -10541,7 +10541,7 @@ __metadata:
     eslint-plugin-storybook: ^0.6.12
     eslint-plugin-vitest: ~0.2.6
     prettier: ^2.8.8
-    qwik-speak: ~0.14.1
+    qwik-speak: ~0.15.3
     react: ^18.2.0
     react-dom: ^18.2.0
     storybook: ^7.0.26
@@ -11532,14 +11532,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qwik-speak@npm:~0.14.1":
-  version: 0.14.1
-  resolution: "qwik-speak@npm:0.14.1"
+"qwik-speak@npm:~0.15.3":
+  version: 0.15.3
+  resolution: "qwik-speak@npm:0.15.3"
   peerDependencies:
     "@builder.io/qwik": ">=1.1.4"
   bin:
     qwik-speak-extract: extract/cli.js
-  checksum: 30919382e492e59cf596b6770f8d58d355dd8de6a1f02cf22f8f3ed125588ee47a2bade88d5595130baf6fff876ae4dc560c0a2e1b97c401259073c3014370f7
+  checksum: 322a5aba1bb424aa539448db7cf7915917a8d5724fcd424dea9848c80865acde3ac0d4b0e5363f2f6f91f5e6cdc98b79130c2248c21711981c30b1c6775894b6
   languageName: node
   linkType: hard
 
