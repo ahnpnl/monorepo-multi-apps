@@ -28,8 +28,8 @@
     "qwik": "qwik"
   },
   "devDependencies": {
-    "@builder.io/qwik": "~1.2.6",
-    "@builder.io/qwik-city": "~1.2.6",
+    "@builder.io/qwik": "~1.2.10",
+    "@builder.io/qwik-city": "~1.2.10",
     "@storybook/addon-essentials": "^7.0.26",
     "@storybook/addon-links": "^7.0.26",
     "@storybook/blocks": "^7.0.26",
@@ -47,7 +47,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-qwik": "~1.2.6",
+    "eslint-plugin-qwik": "~1.2.10",
     "eslint-plugin-storybook": "^0.6.12",
     "eslint-plugin-vitest": "~0.2.6",
     "prettier": "^2.8.8",
