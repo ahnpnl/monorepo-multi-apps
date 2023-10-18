@@ -2,7 +2,7 @@ import type { IETFLocaleType, ISOLocaleType, LanguageType } from './types';
 
 export class LocaleHelper {
     static fromLocaleToLang(locale: IETFLocaleType): LanguageType {
-        return locale.replace(/-.*/, '') as LanguageType;
+        return locale.replace(/-.*/, '');
     }
 
     static fromIsoLocaleToIETFLocale(locale: ISOLocaleType): IETFLocaleType {

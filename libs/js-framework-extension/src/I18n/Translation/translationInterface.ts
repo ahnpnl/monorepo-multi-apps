@@ -4,10 +4,10 @@ type TranslationParametersType<T = Record<string, unknown>> = T & Record<string,
 export type TranslationInputType =
     | string
     | {
-    key: string;
-    namedValue?: TranslationParametersType;
-    count?: number;
-};
+          key: string;
+          namedValue?: TranslationParametersType;
+          count?: number;
+      };
 
 export interface TranslationStateInterface<TLocale = IETFLocaleType, TLanguage = LanguageType> {
     locale: TLocale;
