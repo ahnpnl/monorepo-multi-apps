@@ -12,7 +12,7 @@
   "scripts": {
     "serve-vue": "yarn workspace vue-app dev",
     "serve-qwik": "yarn workspace qwik-app dev",
-    "test-e2e": "cypress open"
+    "type-check": "yarn workspaces foreach run type-check"
   },
   "packageManager": "yarn@3.3.1"
 }
