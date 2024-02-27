@@ -12,7 +12,6 @@ export class TestFixtureTvShowExtension {
     }
 
     static withShows(shows: TvShowType[]): typeof TestFixtureTvShowExtension {
-        this.fixtureUnderConstruction = this.fixtureUnderConstruction ?? [new TvShowFixture()];
         this.fixtureUnderConstruction = shows.map((show) => {
             const fixture = new TvShowFixture();
             fixture.id = show.id;

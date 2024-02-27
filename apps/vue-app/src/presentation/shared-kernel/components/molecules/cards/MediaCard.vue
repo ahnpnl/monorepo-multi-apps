@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import type { MediaType } from "@/presentation/media-grid/mediaTypes.ts";
+import type { MediaType } from "@/presentation/shared-kernel/components/molecules/cards/mediaTypes.ts";
 
 defineProps<{
     media: MediaType;

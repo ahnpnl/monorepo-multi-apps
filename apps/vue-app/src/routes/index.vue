@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import MediaGrid from "@/presentation/media-grid/MediaGrid.vue";
+import MediaGrid from "@/presentation/shared-kernel/components/molecules/cards/MediaGrid.vue";
 import { useFetchRunningShows } from "@/presentation/tv-show/useFetchRunningShows.ts";
 
 const tvShows = useFetchRunningShows();

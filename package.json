@@ -12,6 +12,7 @@
   "scripts": {
     "test": "npm run test -ws",
     "lint": "npm run lint -ws",
-    "type-check": "npm run type-check -ws"
+    "type-check": "npm run type-check -ws",
+    "start-tv": "npm --workspace vue-app run dev"
   }
 }

@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ShowDetails > renders HTML > should display show information and cast 1`] = `
+"<div data-v-572bbe56="" class="tv-show-details">
+  <div data-v-572bbe56="" class="tv-show-details__information flex md-flex-row gap-10 items-center"><img data-v-572bbe56="" src="https://static.tvmaze.com/uploads/images/original_untouched/490/1226764.jpg" alt="True Detective" width="400" height="600">
+    <div data-v-572bbe56="" class="details-information flex flex-col gap-10">
+      <h2 data-v-572bbe56="">Storyline</h2>
+      <p data-v-572bbe56=""> Touch darkness and darkness touches you back. True Detective centers on troubled cops and the investigations that drive them to the edge. Each season features a new cast and a new case. True Detective is an American anthology crime drama television series created and written by Nic Pizzolatto.&nbsp; </p>
+      <div data-v-572bbe56="" class="details-information__side-information grid gap-4 items-center"><span data-v-572bbe56="">Released</span><span data-v-572bbe56="">2014-01-12</span><span data-v-572bbe56="">Runtime</span><span data-v-572bbe56="">1h</span><span data-v-572bbe56="">Genre</span><span data-v-572bbe56="">Drama, Crime, Thriller</span><span data-v-572bbe56="">Status</span><span data-v-572bbe56="">Running</span><span data-v-572bbe56="">Language</span><span data-v-572bbe56="">English</span></div>
+    </div>
+  </div>
+  <div data-v-572bbe56="" class="tv-show-details__cast">
+    <h2 data-v-572bbe56="">Cast</h2>
+    <div data-v-572bbe56="" class="carousel-items">
+      <div data-v-572bbe56="" class="carousel-items__item flex flex-row gap-2">
+        <div data-v-8024ae0a="" data-v-572bbe56="" class="media-card" data-testid="media-card-559"><a data-v-8024ae0a="" class="block" href="https://www.tvmaze.com/characters/559/true-detective-maggie-hart">
+            <div data-v-8024ae0a="" class="media-card__picture">
+              <picture data-v-8024ae0a=""><img data-v-8024ae0a="" src="https://static.tvmaze.com/uploads/images/medium_portrait/0/62.jpg" alt="Maggie Hart" height="270" width="185"></picture>
+            </div><span data-v-8024ae0a="">Maggie Hart</span>
+          </a></div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;

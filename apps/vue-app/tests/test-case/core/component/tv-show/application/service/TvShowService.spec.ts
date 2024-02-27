@@ -1,7 +1,8 @@
+import { TestFixtureTvShowCastExtension } from "../../../../../../framework/extensions/fixtures/tv-shows/TestFixtureTvShowCastExtension.ts";
 import { TestFixtureTvShowExtension } from "../../../../../../framework/extensions/fixtures/tv-shows/TestFixtureTvShowExtension.ts";
-import { fakeApiClient } from "../../../../../../framework/infrastructure/api-client/fakeApiClient.ts";
+import { fakeApiClient } from "../../../../../../framework/test-double/infrastructure/api-client/fakeApiClient.ts";
 
-import { TvShowService } from "@/core/component/tv-show/application/TvShowService.ts";
+import { TvShowService } from "@/core/component/tv-show/application/service/TvShowService.ts";
 import { TV_SHOW_STATUS } from "@/core/component/tv-show/domain/TvShowType.ts";
 
 describe("TvShowService", () => {
@@ -46,6 +47,56 @@ describe("TvShowService", () => {
             fakeApiClient.query = vi.fn().mockResolvedValueOnce(tvShowsStub);
 
             await expect(tvShowService.queryShows(TV_SHOW_STATUS.RUNNING)).resolves.toEqual([tvShowsStub[1]]);
+        });
+    });
+
+    describe("queryShowDetail", () => {
+        it("should return show detail", async () => {
+            const fixture = TestFixtureTvShowExtension.startNewFixture();
+            fixture.withShows([
+                {
+                    id: 5,
+                    name: "True Detective",
+                    language: "English",
+                    genres: ["Drama", "Crime", "Thriller"],
+                    status: "Running",
+                    runtime: 60,
+                    premiered: "2014-01-12",
+                    image: {
+                        medium: "https://static.tvmaze.com/uploads/images/medium_portrait/490/1226764.jpg",
+                        original: "https://static.tvmaze.com/uploads/images/original_untouched/490/1226764.jpg",
+                    },
+                    summary:
+                        "<p>Touch darkness and darkness touches you back. <b>True Detective</b> centers on troubled cops and the investigations that drive them to the edge. Each season features a new cast and a new case.</p><p><i><b>True Detective</b></i> is an American anthology crime drama television series created and written by Nic Pizzolatto. </p>",
+                },
+            ]);
+            const tvShowDetailsStub = fixture.toJson()[0];
+            fakeApiClient.query = vi.fn().mockResolvedValueOnce(tvShowDetailsStub);
+
+            await expect(tvShowService.queryShowDetail(tvShowDetailsStub.id)).resolves.toEqual(tvShowDetailsStub);
+        });
+    });
+
+    describe("queryShowCasts", () => {
+        it("should return show cast", async () => {
+            const fixture = TestFixtureTvShowCastExtension.startNewFixture();
+            fixture.withCasts([
+                {
+                    person: {
+                        id: 559,
+                        url: "https://www.tvmaze.com/characters/559/true-detective-maggie-hart",
+                        name: "Maggie Hart",
+                        image: {
+                            medium: "https://static.tvmaze.com/uploads/images/medium_portrait/0/62.jpg",
+                            original: "https://static.tvmaze.com/uploads/images/original_untouched/0/62.jpg",
+                        },
+                    },
+                },
+            ]);
+            const tvShowCastsStub = fixture.toJson();
+            fakeApiClient.query = vi.fn().mockResolvedValueOnce(tvShowCastsStub);
+
+            await expect(tvShowService.queryShowCasts(1)).resolves.toEqual(tvShowCastsStub);
         });
     });
 });

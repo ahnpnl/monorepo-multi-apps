@@ -1,7 +1,7 @@
 import { render } from "@testing-library/vue";
 
-import MediaGrid from "@/presentation/media-grid/MediaGrid.vue";
-import type { MediaType } from "@/presentation/media-grid/mediaTypes.ts";
+import MediaGrid from "@/presentation/shared-kernel/components/molecules/cards/MediaGrid.vue";
+import type { MediaType } from "@/presentation/shared-kernel/components/molecules/cards/mediaTypes.ts";
 
 describe("MediaGrid", () => {
     describe("renders HTML", () => {

@@ -53,3 +53,14 @@ export type TvShowType = {
     image: ImageType;
     summary: string;
 };
+
+type PersonType = {
+    id: number;
+    name: string;
+    image: ImageType;
+    url: URLType;
+};
+
+export type TvShowCastType = {
+    person: PersonType;
+};

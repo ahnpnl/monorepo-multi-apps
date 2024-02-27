@@ -1,7 +1,7 @@
 import { render } from "@testing-library/vue";
 
-import MediaCard from "@/presentation/media-grid/MediaCard.vue";
-import type { MediaType } from "@/presentation/media-grid/mediaTypes.ts";
+import MediaCard from "@/presentation/shared-kernel/components/molecules/cards/MediaCard.vue";
+import type { MediaType } from "@/presentation/shared-kernel/components/molecules/cards/mediaTypes.ts";
 
 describe("MediaCard", () => {
     describe("renders HTML", () => {

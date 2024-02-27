@@ -1,6 +1,6 @@
 import { computed, ref } from "vue";
 
-import type { MediaType } from "@/presentation/media-grid/mediaTypes.ts";
+import type { MediaType } from "@/presentation/shared-kernel/components/molecules/cards/mediaTypes.ts";
 import { TvShowResource } from "@/presentation/tv-show/Resources/TvShowResource.ts";
 import { tvShowClientService } from "@/presentation/tv-show/tvShowClientService.ts";
 
