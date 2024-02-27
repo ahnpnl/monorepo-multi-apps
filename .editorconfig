@@ -9,21 +9,8 @@ insert_final_newline = true
 indent_style = space
 trim_trailing_whitespace = true
 
-[*.php]
-indent_size = 4
-
-[Makefile{.custom, .custom.dist}]
-indent_style = tab
-tab_width = 4
-
 [*.{yml, yaml}]
 indent_size = 2
 
 [*.{js,jsx,ts,tsx,vue}]
-indent_size = 4
-
-[*.twig]
-indent_size = 4
-
-[*.graphql]
 indent_size = 4
