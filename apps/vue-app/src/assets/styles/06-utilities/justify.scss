@@ -1,0 +1,9 @@
+.justify-around {
+  justify-content: space-around;
+}
+
+@media (min-width: 768px) {
+  .md-justify-start {
+    justify-content: flex-start;
+  }
+}

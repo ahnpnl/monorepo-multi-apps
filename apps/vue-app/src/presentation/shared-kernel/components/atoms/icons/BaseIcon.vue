@@ -9,8 +9,10 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from "vue";
 
+import type { IconType } from "@/presentation/shared-kernel/components/atoms/icons/iconTypes.ts";
+
 const props = defineProps<{
-    name: "home" | "tv";
+    name: IconType;
 }>();
 
 const component = defineAsyncComponent(() => import(`../../../../../assets/icons/${props.name}.svg`));
