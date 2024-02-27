@@ -26,6 +26,6 @@
       "@assets/*": ["src/assets/*"],
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*", "config", "global-types"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*", "config", "global-types", "lib"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

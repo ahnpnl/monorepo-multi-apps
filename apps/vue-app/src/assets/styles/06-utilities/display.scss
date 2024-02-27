@@ -1,9 +1,29 @@
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
 }
 
 .flex-col-reverse {
   flex-direction: column-reverse;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.content-between {
+  justify-content: space-between;
 }
 
 @media (min-width: 768px) {
@@ -14,6 +34,10 @@
   .md-flex-col {
     flex-direction: column;
   }
+}
+
+.grid {
+  display: grid;
 }
 
 
