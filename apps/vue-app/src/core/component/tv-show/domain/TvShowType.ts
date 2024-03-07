@@ -50,14 +50,14 @@ export type TvShowType = {
     status: TvShowStatusType;
     runtime: number;
     premiered: ISODateStringType;
-    image: ImageType;
+    image: ImageType | null;
     summary: string;
 };
 
 type PersonType = {
     id: number;
     name: string;
-    image: ImageType;
+    image: ImageType | null;
     url: URLType;
 };
 

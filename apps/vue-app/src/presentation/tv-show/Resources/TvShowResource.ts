@@ -1,6 +1,7 @@
 import type { TvShowService } from "@/core/component/tv-show/application/service/TvShowService.ts";
 import { TV_SHOW_STATUS, type TvShowType } from "@/core/component/tv-show/domain/TvShowType.ts";
 import type { MediaDetailType, MediaType } from "@/presentation/shared-kernel/components/molecules/cards/mediaTypes.ts";
+import fallbackImg from "@assets/imgs/fallbackImg.jpg";
 
 interface TvShowResourceInterface {
     getRunningTvShows: () => Promise<MediaType[]>;
@@ -16,7 +17,7 @@ export class TvShowResource implements TvShowResourceInterface {
             return shows.map((show) => ({
                 id: show.id,
                 name: show.name,
-                posterPath: show.image.medium,
+                posterPath: show.image?.medium ?? fallbackImg,
                 url: `/tv/${show.id}`,
             }));
         });
@@ -27,7 +28,7 @@ export class TvShowResource implements TvShowResourceInterface {
             return {
                 name: show.name,
                 summary: show.summary.replace(/<\/?[^>]+>/gi, " "),
-                posterPath: show.image.original,
+                posterPath: show.image?.original ?? fallbackImg,
                 genres: show.genres.join(", "),
                 status: show.status,
                 releasedDate: show.premiered,
@@ -44,7 +45,7 @@ export class TvShowResource implements TvShowResourceInterface {
                     id: person.id,
                     name: person.name,
                     url: person.url,
-                    posterPath: person.image.medium,
+                    posterPath: person.image?.medium ?? fallbackImg,
                 };
             });
         });
