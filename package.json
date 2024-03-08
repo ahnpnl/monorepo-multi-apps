@@ -1,19 +1,6 @@
 {
   "name": "monorepo-playground-many-apps",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "license": "MIT",
-  "private": true,
-  "workspaces": {
-    "packages": [
-      "apps/*",
-      "libs/*"
-    ]
-  },
-  "scripts": {
-    "serve-vue": "yarn workspace vue-app dev",
-    "serve-qwik": "yarn workspace qwik-app dev",
-    "lint": "yarn workspaces foreach run lint",
-    "type-check": "yarn workspaces foreach run type-check"
-  },
-  "packageManager": "yarn@3.3.1"
+  "private": true
 }
