@@ -1,51 +1,19 @@
 module.exports = {
-    root: true,
-    env: {
-        browser: true,
-        es6: true,
-        node: true,
-    },
-    plugins: ['@typescript-eslint', 'import'],
+    ignorePatterns: ["*.html"],
     extends: [
         'airbnb-base',
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
+        'plugin:import/recommended',
         'plugin:import/typescript',
         'plugin:prettier/recommended',
     ],
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-        tsconfigRootDir: __dirname,
-        project: ['./tsconfig.eslint.json'],
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-        ecmaFeatures: {
-            jsx: true,
-        },
-    },
     rules: {
-        '@typescript-eslint/naming-convention': [
-            'error',
-            {
-                selector: 'typeParameter',
-                format: ['PascalCase'],
-                prefix: ['T'],
-            },
-            {
-                selector: 'interface',
-                format: ['PascalCase'],
-                suffix: ['Interface'],
-            },
-            {
-                selector: 'typeAlias',
-                format: ['PascalCase'],
-                suffix: ['Type'],
-            },
-        ],
         '@typescript-eslint/no-empty-function': 'error',
         '@typescript-eslint/no-shadow': 'error',
         '@typescript-eslint/no-use-before-define': 'error',
         '@typescript-eslint/no-useless-constructor': 'error',
+        '@typescript-eslint/no-var-requires': 'off',
         curly: ['error', 'all'],
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
@@ -101,10 +69,8 @@ module.exports = {
             },
         },
         {
-            files: ['*.js'],
-            rules: {
-                '@typescript-eslint/no-var-requires': 'off',
-            },
+            files: ['*.spec.ts'],
+            plugins: ['vitest'],
         },
     ],
-};
+}

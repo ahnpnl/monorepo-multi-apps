@@ -3,8 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "lint": "eslint --ext .js,.mjs,.cjs,.ts,.tsx .",
-    "lint-fix": "yarn lint --fix",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
     "type-check": "tsc"
   }
 }
