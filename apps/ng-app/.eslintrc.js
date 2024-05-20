@@ -1,4 +1,4 @@
-const baseConfig = require('../../eslintrc.base');
+const baseConfig = require('../../eslint.base');
 
 const overridesConfig = baseConfig.overrides.map((cfg, idx) => {
     if (idx === 0) {
