@@ -1,5 +1,4 @@
-module.exports = {
-    ignorePatterns: ["*.html"],
+const baseJsTsConfig = {
     extends: [
         'airbnb-base',
         'eslint:recommended',
@@ -8,12 +7,17 @@ module.exports = {
         'plugin:import/typescript',
         'plugin:prettier/recommended',
     ],
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        project: 'tsconfig.eslint.json',
+    },
     rules: {
         '@typescript-eslint/no-empty-function': 'error',
         '@typescript-eslint/no-shadow': 'error',
         '@typescript-eslint/no-use-before-define': 'error',
         '@typescript-eslint/no-useless-constructor': 'error',
         '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/prefer-readonly': 'error',
         curly: ['error', 'all'],
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
@@ -45,6 +49,11 @@ module.exports = {
                 next: 'return',
             },
         ],
+    },
+}
+
+module.exports = {
+    rules: {
         'prettier/prettier': [
             'error',
             {
@@ -58,17 +67,11 @@ module.exports = {
     },
     overrides: [
         {
-            files: ['*.ts'],
-            extends: ['plugin:@typescript-eslint/recommended-requiring-type-checking'],
-            parser: '@typescript-eslint/parser',
-            parserOptions: {
-                project: 'tsconfig.eslint.json',
-            },
-            rules: {
-                '@typescript-eslint/prefer-readonly': 'error',
-            },
+            ...baseJsTsConfig,
+            files: ['*.ts', '*.js'],
         },
         {
+            ...baseJsTsConfig,
             files: ['*.spec.ts'],
             plugins: ['vitest'],
         },
