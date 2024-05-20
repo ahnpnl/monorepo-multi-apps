@@ -6,6 +6,7 @@
     "moduleResolution": "Node",
     "target": "ES2022",
     "module": "ES2022",
+    "types": ["vitest/globals"],
     "lib": [
       "ES2022",
       "DOM"
