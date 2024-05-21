@@ -3,11 +3,16 @@ import angular from "@analogjs/vite-plugin-angular";
 import { defineConfig } from 'vite';
 
 export default defineConfig(() => ({
-    plugins: [angular()],
+    plugins: [
+        angular({
+            tsconfig: 'tsconfig.json',
+        }),
+    ],
     test: {
-        environment: 'jsdom',
         globals: true,
-        testTimeout: 30000,
-        passWithNoTests: true
+        environment: 'jsdom',
+        setupFiles: ['test/Framework/testSetup.ts'],
+        include: ['test/**/*.spec.ts'],
+        passWithNoTests: true,
     },
 }));
