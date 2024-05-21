@@ -69,7 +69,7 @@ module.exports = {
     overrides: [
         {
             ...baseJsTsConfig,
-            files: ['*.ts', '*.js'],
+            files: ['*.ts', '*.js', '*.mts', '*.mjs'],
         },
         {
             ...baseJsTsConfig,
