@@ -13,5 +13,10 @@ export default defineConfig(() => ({
         setupFiles: ['test/Framework/testSetup.ts'],
         include: ['test/**/*.spec.ts'],
         passWithNoTests: true,
+        server: {
+            deps: {
+                inline: [/fesm2022/] // See https://github.com/analogjs/analog/issues/1009#issuecomment-2040165952
+            }
+        },
     },
 }));
