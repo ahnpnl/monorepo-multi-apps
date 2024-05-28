@@ -1,11 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
+import { provideGraphQLClient } from '../../src/app/Infrastructure/ApiClient/provideGraphQLClient';
 import { AppComponent } from '../../src/app/app.component';
 
 describe('AppComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [AppComponent],
+            providers: [provideGraphQLClient()],
         }).compileComponents();
     });
 
