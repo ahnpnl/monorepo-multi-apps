@@ -18,6 +18,11 @@ const baseJsTsConfig = {
         '@typescript-eslint/no-useless-constructor': 'error',
         '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/prefer-readonly': 'error',
+        '@typescript-eslint/method-signature-style': [
+            'error',
+            'property',
+        ],
+        'class-methods-use-this': 'off',
         curly: ['error', 'all'],
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
